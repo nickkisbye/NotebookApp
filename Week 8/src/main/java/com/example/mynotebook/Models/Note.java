@@ -12,8 +12,10 @@ public class Note {
         this.body = body;
     }
 
-    public Note() {
+    public Note() {}
 
+    public String toString() {
+        return this.title;
     }
 
     public int getId() {

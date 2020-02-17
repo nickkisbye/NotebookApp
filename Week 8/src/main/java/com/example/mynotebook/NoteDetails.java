@@ -35,12 +35,12 @@ public class NoteDetails extends AppCompatActivity {
     /**
      * Edit the note object and headline and switches back to the MainActivity.
      * @param view
+     *
      */
     public void saveNote(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         note.setTitle(headline.getText().toString());
         note.setBody(body.getText().toString());
-        MainActivity.headlines.set(noteId, headline.getText().toString());
         startActivity(intent);
     }
 }

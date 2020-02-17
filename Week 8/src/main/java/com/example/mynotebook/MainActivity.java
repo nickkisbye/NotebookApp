@@ -17,16 +17,15 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
-    public static List<String> headlines = new ArrayList<>();
     public static List<Note> noteList = new ArrayList<>();
-    private ArrayAdapter<String> adapter;
+    private ArrayAdapter<Note> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listView);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, headlines);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, noteList);
         listView.setAdapter(adapter);
 
         /**
@@ -60,12 +59,11 @@ public class MainActivity extends AppCompatActivity {
     public void addNote(View view) {
         Note note = new Note();
 
-        note.setId(headlines.size() + 1);
-        note.setTitle("Headline " + (headlines.size() + 1));
+        note.setId(noteList.size() + 1);
+        note.setTitle("Headline " + (noteList.size() + 1));
         note.setBody("");
 
         noteList.add(note);
-        headlines.add(note.getTitle());
         adapter.notifyDataSetChanged();
     }
 
