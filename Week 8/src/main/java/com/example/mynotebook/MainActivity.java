@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Note note = new Note();
 
         note.setId(noteList.size() + 1);
-        note.setTitle("Headline " + (noteList.size() + 1));
+        note.setTitle("New note");
         note.setBody("");
 
         noteList.add(note);
